@@ -48,6 +48,8 @@
 $ pip install throttled-py
 ```
 
+> 说明：`v3.x` 要求 Python `>=3.10`。如果你使用的是 Python `3.8/3.9`，请安装 `throttled-py<3.0.0`。
+
 ### 1）额外依赖
 
 自 [v2.0.0](https://github.com/ZhuoZhuoCrayon/throttled-py/releases/tag/v2.0.0) 版本起，默认安装仅包含核心功能依赖。
@@ -57,16 +59,18 @@ $ pip install throttled-py
 ```shell
 $ pip install "throttled-py[redis]"
 
-$ pip install "throttled-py[redis,in-memory]"
+$ pip install "throttled-py[otel]"
+
+$ pip install "throttled-py[redis,otel]"
 ```
 
 可选依赖项说明：
 
 | 附加依赖项       | 描述               |
 |-------------|------------------|
-| `all`       | 安装所有扩展依赖。        | 
-| `in-memory` | 使用内存作为存储后端。      |
+| `memory`    | 内存后端默认可用（`memory` extra 不会额外安装依赖）。 |
 | `redis`     | 使用 Redis 作为存储后端。 |
+| `otel`      | 启用 OpenTelemetry Hook 支持。 |
 
 
 ## 🎨 快速开始

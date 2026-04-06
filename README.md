@@ -48,6 +48,8 @@
 $ pip install throttled-py
 ```
 
+> Note: `v3.x` requires Python `>=3.10`. If you are using Python `3.8/3.9`, install `throttled-py<3.0.0`.
+
 ### 1) Optional Dependencies
 
 Starting from [v2.0.0](https://github.com/ZhuoZhuoCrayon/throttled-py/releases/tag/v2.0.0), only core dependencies are installed by default.
@@ -57,14 +59,16 @@ To enable additional features, install optional dependencies as follows (multipl
 ```shell
 $ pip install "throttled-py[redis]"
 
-$ pip install "throttled-py[redis,in-memory]"
+$ pip install "throttled-py[otel]"
+
+$ pip install "throttled-py[redis,otel]"
 ```
 
 | Extra       | Description                       |
 |-------------|-----------------------------------|
-| `all`       | Install all extras.               |
-| `in-memory` | Use In-Memory as storage backend. |
+| `memory`    | In-Memory backend is available by default (`memory` extra installs no additional dependencies). |
 | `redis`     | Use Redis as storage backend.     |
+| `otel`      | Enable OpenTelemetry hook support. |
 
 
 ## 🎨 Quick Start
